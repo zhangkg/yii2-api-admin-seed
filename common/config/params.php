@@ -4,4 +4,6 @@
  * @author Gene <https://github.com/Talkyunyun>
  */
 
-return [];
+return [
+    'common' => '我是common模块中的'
+];

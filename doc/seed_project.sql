@@ -57,7 +57,7 @@ CREATE TABLE `sys_admin_user_login_log` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '登录时间',
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='系统用户登录日志表';
+) ENGINE=MyISAM AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COMMENT='系统用户登录日志表';
 
 
 CREATE TABLE `sys_node` (
@@ -126,31 +126,13 @@ ALTER TABLE `sys_admin_user` ENABLE KEYS;
 UNLOCK TABLES;
 
 
-LOCK TABLES `sys_admin_user_login_log` WRITE;
-ALTER TABLE `sys_admin_user_login_log` DISABLE KEYS;
-INSERT INTO `sys_admin_user_login_log` (`id`, `uid`, `ip`, `data`, `url`, `client_name`, `client_version`, `platform`, `created`) VALUES
-  (1,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"4n0wZvtkIFs6qkW0LUZgoyoDG_3dIwjDd3mOp8Qh-7R0bQEfyqzygK8u0wKFvJZ66fpq5LKg6yWFypFz9DqyQw=="},"get":[]}','/index.php','Google Chrome','61.0.3163.91','MAC','2017-09-16 18:44:21'),
-  (2,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"omCf5C2sX0SxVLDoIiXTHDvZdh0TVheSe-B_nEx-Rfo0cK6dHGSNnyTQJl6K3yXF-CAHBHzV9HSJU2BIfGUMDQ=="},"get":[]}','http://general.yii.com/login/do','Google Chrome','61.0.3163.91','MAC','2017-09-16 18:46:08'),
-  (3,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"IR_B7JTUGKEEoQ5KwZLjuWp2nSb6UiQTGOM0JKv0pUC3D_CVpRzKepElmPxpaBVgqY_sP5XRx_XqUCvwm-_stw=="},"get":[]}','http://general.yii.com/login/do','Google Chrome','61.0.3163.91','MAC','2017-09-16 18:46:48'),
-  (4,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"hbf2qsvp6OVGCbV8B2qVncLcvCaiPnObgItrmIX72cATp8fT-iE6PtONI8qvkGNEASXNP829kH1yOHRMteCQNw=="},"get":[]}','http://general.yii.com/login/do','Google Chrome','61.0.3163.91','MAC','2017-09-16 18:51:29'),
-  (5,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"Z305ZWWk7Y5mpWJOqWK7F3-gBwoKM6FqcEWahkhtOCvxbQgcVGw_VfMh9PgBmE3OvFl2E2WwQoyC9oVSeHZx3A=="},"get":[]}','http://general.yii.com/login/do','Google Chrome','61.0.3163.91','MAC','2017-09-16 18:58:51'),
-  (6,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"0FsTN_q729jdA4-38m9Bp8wD3SlvgJVqig8vaNU-b9cbCY-iGXBhjSgFrTBcDRLP95egb_tRXz6reygsM2YLpg=="},"get":[]}','http://general.yii.com/login/do','Google Chrome','61.0.3163.91','MAC','2017-09-20 16:37:57'),
-  (7,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","_csrf":"lasGIhSm6G6QmYcTPi5x3jnJNxXjaDo9PONfPzqZIWYhLJWeWJ-JpMz2jSnqvcQqKUCnDX3Y1P5G0R-WB37lwQ=="},"get":[]}','http://general.yii.com/login/do','Google Chrome','61.0.3163.91','MAC','2017-09-22 10:58:47'),
-  (8,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","token":"vBJPsbCsFjwNrBYNt6LQqVZMFX-nkWtxBTdlY8NFZSrtPzbI--pyWDjlZW_Z8OHZYg10G__iXjVGA1FSiSFcQQ=="},"get":[]}','http://mall.yg.com/admin/login/do','Google Chrome','61.0.3163.100','MAC','2017-11-03 15:16:50'),
-  (9,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","token":"jt4olgs2nKZOyTS4USX8gbVUON7FElWlomukK4o9n3Tf81HvQHD4wnuAR9o_d83xgRVZup1hYOHhX5AawFmmHw=="},"get":[]}','http://mall.yg.com/login/do','Google Chrome','61.0.3163.100','MAC','2017-11-03 15:26:00'),
-  (10,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","token":"zR4Bp2-byAO6vbp_GohuvMxCQf4QllE4j4GaFLuHggKcM3jeJN2sZ4_0yR102l_M-AMgmkjlZHzMta4l8eO7aQ=="},"get":[]}','http://mall.yg.com/login/do','Google Chrome','61.0.3163.100','MAC','2017-11-03 15:28:46'),
-  (11,1,'127.0.0.1','{"post":{"username":"admin","password":"123456","token":"v_28fKAEfrt2cBLUC5S1b_ct2m0UbNDH1jcn6cmQsVbu0MUF60Ia30M5YbZlxoQfw2y7CUwf5YOVAxPYg_SIPQ=="},"get":[]}','http://mall.yg.com/login/do','Google Chrome','61.0.3163.100','MAC','2017-11-03 15:36:46');
-ALTER TABLE `sys_admin_user_login_log` ENABLE KEYS;
-UNLOCK TABLES;
-
-
 LOCK TABLES `sys_node` WRITE;
 ALTER TABLE `sys_node` DISABLE KEYS;
 INSERT INTO `sys_node` (`id`, `pid`, `name`, `url`, `status`, `is_menu`, `level`, `can_del`, `sort`, `font_icon`) VALUES
   (1,0,'系统管理','#',1,1,1,0,0,'cog'),
-  (2,1,'菜单管理','/admin/systems/node/index',1,1,1,0,0,''),
-  (3,1,'角色管理','/admin/systems/role/index',1,1,1,0,0,''),
-  (4,1,'系统用户','/admin/systems/user/index',1,1,1,0,0,'');
+  (2,1,'菜单管理','/system/node/index',1,1,1,0,0,''),
+  (3,1,'角色管理','/system/role/index',1,1,1,0,0,''),
+  (4,1,'系统用户','/system/user/index',1,1,1,0,0,'');
 ALTER TABLE `sys_node` ENABLE KEYS;
 UNLOCK TABLES;
 

@@ -2,13 +2,23 @@
 namespace api\modules\v1\controllers;
 
 
-use yii\rest\Controller;
+use yii\web\Controller;
 
 class TestController extends Controller {
 
 
     public function actionIndex() {
 
-        echo '333';
+
+        dd(\Yii::$app->getComponents());
+        echo "aaaaa";
+
+//         return $this->render('index');
+    }
+
+
+    public function actionTest() {
+
+        echo "sdfdsf";
     }
 }
